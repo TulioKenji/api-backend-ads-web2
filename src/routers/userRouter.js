@@ -1,9 +1,9 @@
 import express from 'express'
 
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.get('/', (req, res) => {
+userRouter.get('/', (req, res) => {
     res.json({
       message: "user page",
       user: "tulio",
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     })
   })
   
-  router.post('/', (req, res) => {
+  userRouter.post('/', (req, res) => {
     res.json({
       message: "usuario criado",
       user: "tulio",
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     })
   })
   
-  router.put('/', (req, res) => {
+  userRouter.put('/', (req, res) => {
     res.json({
       message: "usuario atualizado",
       user: "tulioky",
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     })
   })
   
-  router.patch('/', (req, res) => {
+  userRouter.patch('/', (req, res) => {
     res.json({
       message: "nome atualizado",
       user: "tulio",
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
     })
   })
   
-  router.delete('/', (req, res) => {
+  userRouter.delete('/', (req, res) => {
     res.json({
       message: "usuario deletado",
       user: "tulio",
@@ -47,3 +47,5 @@ router.get('/', (req, res) => {
       avatar: "https://github.com/tuliokenji.png"
     })
   })
+
+ export default userRouter;
