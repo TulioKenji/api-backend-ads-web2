@@ -1,4 +1,5 @@
 export default function getPropertyController (req, res) {
+
     return res.json({
         message: "produto 1",
         property: {

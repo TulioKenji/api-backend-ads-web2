@@ -7,7 +7,7 @@ import deleteUserController from '../controllers/user/deleteUserController.js'
 
 const userRouter = express.Router();
 
-userRouter.get('/', getUserController)
+userRouter.get('/:id', getUserController)
   
 userRouter.post('/', postUserController)
   
