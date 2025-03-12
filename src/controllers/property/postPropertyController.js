@@ -1,12 +1,8 @@
 const postPropertyController = (req, res) =>{
+    const property = req.body;
     res.json({
         message: "produto 1 adicionado",
-        property: {
-            name: "produto1",
-            id: "0",
-            value: "40,00",
-            description: "sofa"
-        }
+        property: property
         
     })
 }

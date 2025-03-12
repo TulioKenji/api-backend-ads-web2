@@ -5,12 +5,15 @@ import propertyRouter from './routers/propertyRouter.js'
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.redirect('https://www.google.com')
-})
+//middleware
+app.use(express.json())
 
 app.use('/user', userRouter)
 app.use('/property', propertyRouter)
+
+app.get('/', (req, res) => {
+  res.redirect('https://www.google.com')
+})
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`)
