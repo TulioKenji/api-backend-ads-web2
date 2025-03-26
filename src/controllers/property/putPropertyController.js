@@ -1,12 +1,14 @@
-const putPropertyController = (req, res) =>{
+import { update } from "../../models/propertymodel.js"
+
+const putPropertyController = async (req, res) =>{
+    const {id} = req.params;
+    const property = req.body;
+
+    const result = await update(+id, property);
+
     res.json({
         message: "produto 1 atualizado",
-        property: {
-            name: "produto1",
-            id: "00",
-            value: "45,00",
-            description: "sofa-cama"
-        }
+        property: result
         
     })
 }

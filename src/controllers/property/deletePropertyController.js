@@ -1,13 +1,14 @@
-const deletePropertyController = (req, res) =>{
+import { remove } from "../../models/propertymodel.js"
+
+
+const deletePropertyController = async(req, res) =>{
+    const {id} = req.params;
+
+    const result = await remove(+id);
+
     res.json({
         message: "produto1 deletado",
-        property: {
-            name: "produto1",
-            id: "00",
-            value: "55,00",
-            description: "sofa-cama"
-        }
-        
+        property: result
     })
 }
 

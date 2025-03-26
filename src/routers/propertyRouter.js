@@ -8,14 +8,16 @@ import deletePropertyController from '../controllers/property/deletePropertyCont
 
 const propertyRouter = express.Router();
 
-propertyRouter.get('/', getPropertyController )
+propertyRouter.get('/list', getPropertyController )
+
+propertyRouter.get(':id', ()=>{}) // get de uma unica propriedade por id
 
 propertyRouter.post('/', postPropertyController)
 
-propertyRouter.put('/', putPropertyController)
+propertyRouter.put('/:id', putPropertyController)
 
-propertyRouter.patch('/', patchPropertyController)
+propertyRouter.patch('/type', patchPropertyController)
 
-propertyRouter.delete('/', deletePropertyController)
+propertyRouter.delete('/:id', deletePropertyController)
 
 export default propertyRouter
