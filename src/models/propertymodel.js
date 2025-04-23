@@ -1,6 +1,22 @@
 import { PrismaClient } from '@prisma/client'
+import { z } from 'zod'
 
 const prisma = new PrismaClient();
+
+const propertySchema = z.object({
+    id: z.number().positive(),
+    type: z.string().min(5).max(19),
+    address: z.string().min(5).max(199),
+    rooms: z.number().positive(),
+    property: z.string().min(5).max(49)
+})
+
+export const propertyValidator = (property, partial = null)=>{
+    if(partial){
+        return propertySchema.partial(partial).safeParse(property)
+    }
+    return propertySchema.safeParse(property)
+}
 
 prisma.users.findMany();
 
